@@ -72,14 +72,14 @@ public class Memo1BankApp {
 		accountService.deleteById(cbu);
 	}
 
-	@PutMapping("/accounts/{cbu}/withdraw")
+	@PostMapping("/accounts/{cbu}/withdraw")
 	public Account withdraw(@PathVariable Long cbu, @RequestParam Double sum) {
 		Account account = accountService.withdraw(cbu, sum);
 
 		return account;
 	}
 
-	@PutMapping("/accounts/{cbu}/deposit")
+	@PostMapping("/accounts/{cbu}/deposit")
 	public Account deposit(@PathVariable Long cbu, @RequestParam Double sum) {
 		Account account = accountService.deposit(cbu, sum);
 
